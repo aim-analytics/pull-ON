@@ -89,8 +89,10 @@ def clean_df(df):
 def push(engine, label):
     df.to_sql(label,con=engine,if_exists='replace',index=False)
 
+if __name__ == '__main__':
 
-response, obj = get_obj(url)
-dicts = get_item(obj)
-df = out_df(dicts)
-push(engine, label)
+  response, obj = get_obj(url)
+  dicts = get_item(obj)
+  df = out_df(dicts)
+  df = clean_df(df)
+  push(engine, label)
