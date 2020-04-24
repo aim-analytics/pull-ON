@@ -56,7 +56,9 @@ def push(engine, label):
 
 
     
-response, obj = get_obj(url)
-dicts = get_item(obj)
-df = out_df(dicts)
-push(engine, label)
+if __name__ == '__main__':
+    
+    response, obj = get_obj(url)
+    dicts = get_item(obj)
+    df = out_df(dicts)
+    push(engine, label)
